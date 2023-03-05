@@ -1,4 +1,4 @@
-# storysphere
+# StorySphere - SpaceAthon Submission
 ## Inspiration
 Many of my friends are book writers who all had one struggle in common. They all agreed that they were annoyed that they did not have a single place to store all the information about their book. 
 
