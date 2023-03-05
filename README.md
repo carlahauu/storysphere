@@ -21,3 +21,6 @@ I learned many things this weekend. As a new developer, I wasn't really familiar
 By the end, I got much more familiar with working with all the different files within Django. Additionally, I learned to use CreateView, UpdateView, DeleteView, etc. 
 ## What's next for StorySphere
 There are many changes that I would like to make with StorySphere. I aim to polish this tool a lot. For example, making updating details of the chapters and characters easier to understand. I also want to be able to make all the information stored in Markdown files or allow users to save all the information as a PDF. As I learn more, I hope I can make the front end more appealing through React. 
+
+## Additional Notes 
+I am new to using Git to share my projects so I wasn't sure on how to completely upload my virtual environment onto here. When downloading this file and trying to use this project, please keep that in mind. Thanks, sorry for any inconvenience this may cause!
