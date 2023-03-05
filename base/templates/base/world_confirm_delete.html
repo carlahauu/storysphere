@@ -1,0 +1,44 @@
+{% extends 'base/main.html' %}
+{% block content %}
+
+<style>
+    form{
+        padding-top: 200px;
+        margin-left: 8em;
+        padding-bottom: 500px;
+    }
+
+    p{
+        font-size: 20px;
+        color: #FFE44C;  
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto; 
+    }
+    input{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto; 
+        background:#61C2F9;
+            text-decoration: none;
+            color: #021E30;
+            padding: 10px;
+            padding-left: 30px;
+            padding-right: 30px;
+            font-size: 30px;
+            border-radius: 10px;
+            border-style: none;
+    }
+
+</style>
+
+<a href="{% url 'characters' %}">Go Back</a>
+<form method="POST">
+    {% csrf_token %}
+    <p>Are you sure you want to delete these details?</p>
+    <br><input type="submit" value = "Delete"/> 
+</form>
+
+{% endblock content %}

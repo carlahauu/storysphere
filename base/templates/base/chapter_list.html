@@ -1,0 +1,74 @@
+{% extends "base/main.html" %}
+
+{% block title %}
+characters 
+{% endblock %}
+
+{% block content %}
+
+<style>
+
+    h3{
+        color: white;
+        font-weight: 100;
+    }
+    .heading{
+        padding-top: 100px;
+        text-align: center;
+    }
+    h1{
+        text-align: center;
+        color: #FFE44C;
+        font-weight: 400;
+    }
+    .create-btn{
+        color: white;
+    }
+    .character-btn{
+        color: white;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto; 
+        text-decoration: none;
+        font-size: 20px;
+    }
+    .delete{
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto; 
+        text-decoration: none;
+        color: red;
+    }
+    .characterlist{
+        padding-bottom: 500px;
+    }
+</style>
+
+<div class="heading">
+    <h1>Chapters</h1>
+    <a href="{% url 'new-chapter'%}"class="create-btn">Create a new chapter</a>
+    <br><br>
+</div>
+
+<div class="characterlist">
+    {% for chapter in chapters %}
+    <div class="character-wrapper" data-position="{{chapter.pk}}">
+        <div class="character-title">
+            <a class="character-btn"href="{% url 'chapter-update' chapter.id%}">- {{chapter}}</a>
+            <a class="delete"href="{% url 'chapter-delete' chapter.id %}">>Delete</a><br>
+        </div>
+    </div>
+
+    {% empty %}
+    <div style="text-align: center; padding-bottom: 10px; line-height: 1em;">
+        <h3>No chapters have been created.</h3>
+        <h3>Create a <a style="text-decoration: none; color: #61c1f9bb;" href="{% url 'new-chapter' %}">New chapter</a> ! </h3>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock content %}

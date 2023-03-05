@@ -1,0 +1,78 @@
+{% extends "base/main.html" %}
+
+{% block title %}
+characters 
+{% endblock %}
+
+{% block content %}
+
+<style>
+
+    h3{
+        color: white;
+        font-weight: 100;
+    }
+    .heading{
+        padding-top: 100px;
+        text-align: center;
+    }
+    h1{
+        text-align: center;
+        color: #FFE44C;
+        font-weight: 400;
+    }
+    .create-btn{
+        color: white;
+    }
+    .character-btn{
+        color: white;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto; 
+        text-decoration: none;
+        font-size: 20px;
+    }
+    .delete{
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto; 
+        text-decoration: none;
+        color: red;
+    }
+    .characterlist{
+        padding-bottom: 500px;
+    }
+    p{
+        color: white;
+    }
+</style>
+
+<div class="heading">
+    <h1>World-Builing</h1>
+    <p>Having solid world-building makes your story more engaging. <br> There are many things to keep in mind when creating your world. Think about its genre, rules and laws, environment, culture, language, and history!</p>
+    <a href="{% url 'new-detail'%}"class="create-btn">Add details about this world</a>
+    <br><br>
+</div>
+
+<div class="characterlist">
+    {% for detail in details %}
+    <div class="character-wrapper" data-position="{{detail.pk}}">
+        <div class="character-title">
+            <a class="character-btn"href="{% url 'detail-update' detail.id%}">- {{detail}}</a>
+            <a class="delete"href="{% url 'detail-delete' detail.id %}">>Delete</a><br>
+        </div>
+    </div>
+
+    {% empty %}
+    <div style="text-align: center; padding-bottom: 10px; line-height: 1em;">
+        <h3>No details have been created.</h3>
+        <h3>Add details relating to this <a style="text-decoration: none; color: #61c1f9bb;" href="{% url 'new-detail' %}">world</a> ! </h3>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock content %}

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-COMPAITABLE" content="IE=edge">
+        <title>{% block title %}{% endblock %}</title>
+        <meta name="description" content=""> 
+        <meta name="viewport" content="width=device-width, initial-scale=1"> 
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,600;0,700;1,600;1,700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    </head>
+    <style>
+
+        .subhead{
+            padding-top: 1em;
+            color:white;
+            font-size: 70px;
+            line-height: 65px;
+        }
+
+        span{
+            color: #61C2F9;
+            text-decoration: underline;
+        }
+
+        body{
+            background: #021E30;
+            margin: 0;
+            font-family: 'Space Grotesk';
+        }
+
+        .navbar{
+            background: #61C2F9;
+            padding: 1em;
+            padding-left: 8em; 
+            position: fixed;
+            width: 100%;
+        }
+
+        .logo{
+            color: #021E30;
+            font-size: 25px;
+        }
+
+        nav{
+            display: inline-block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .primary-cta{
+            background:#61C2F9;
+            text-decoration: none;
+            color: #021E30;
+            padding: 10px;
+            padding-left: 30px;
+            padding-right: 30px;
+            font-size: 30px;
+            border-radius: 10px;
+            margin-right: 1em;
+        }
+
+        .mission-cta{
+            text-decoration: none;
+            color: white;
+            padding-left: 30px;
+            padding-right: 30px;
+            font-size: 30px;
+            border: #FFE44C;
+            border-style: solid;
+            padding-top: 8px;
+            padding-bottom: 8px;
+            border-radius: 10px;
+            background: #021E30;
+        }
+
+        .why{
+            padding-left: 8em;
+            color: #FFE44C;
+            padding-right: 8em;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        ul{
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            padding-left: 20em;
+        }
+
+
+        li {
+            float: left;
+            padding-right: 6em;
+            font-size: large; 
+        }
+
+        li a{
+            text-decoration: none;
+            color: #021E30;
+        }
+
+        section{
+            padding: 5em 8em; 
+        }
+
+        .hero{
+            display: flex;
+        }
+
+        .hero-img{
+            padding-left: 10em;
+            padding-top: 3em;
+        }
+
+        .testimonial{
+            padding: 40px;
+            text-align: center;
+            background: #61c1f9bb;
+            font-size: 25px;
+            padding-left: 6em;
+            padding-right: 6em;
+        }
+
+        footer{
+            text-align: center;
+            background-color: #61C2F9;
+            padding: 10px;
+            font-size: 20px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+
+    </style>
+    <body>
+        <div class="navbar">
+            <a class="logo" href="{% url 'home' %}">// StorySphere</a>
+            <nav>
+                <ul>
+                    <li><a href="{% url 'home' %}">home</a></li>
+                    <li><a>our mission</a></li>
+                    <li><a href="{% url 'characters' %}">characters</a></li>
+                    <li><a href="{% url 'chapters' %}">chapters</a></li>
+                    <li><a href="{% url 'details' %}">world-building</a></li>
+                </ul>
+            </nav>
+        </div>
+
+    </body>
+
+    {% block content %}
+
+    {% endblock content %}
+
+    <footer>Designed and developed by Carla Hau</footer>
+</html>

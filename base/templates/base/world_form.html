@@ -1,0 +1,76 @@
+{% extends "base/main.html" %}
+
+{% block title %}
+chapters 
+{% endblock %}
+
+{% block content %}
+
+<style>
+        h1{
+        color:#FFE44C; 
+        font-size: 35px;
+        font-weight: 200;
+        margin-bottom: none;
+        padding-bottom: none;
+    }
+    input{
+        height: 50px;
+        width: 1000px;
+    }
+    .button{
+        color: #021E30 !important;
+        background-color: #61C2F9 !important; 
+        border-style: none !important;
+        padding: 5px !important;
+            padding-left: 50px !important;
+            padding-right: 50px !important;
+            font-size: 20px !important;
+            border-radius: 5px !important;
+            margin-right: 1em !important;
+    }
+    label{
+        color: #ffffff;
+        font-size: 30px;
+        margin-right: 1em;
+    }
+    p{
+        color:#FFE44C;
+    }
+    .create{
+        padding-top: 100px;
+        padding-bottom: 450px;
+        display: block;
+        margin: auto;
+        text-align: center;
+    }
+    .back, .register{
+        color:#61C2F9
+    }
+    .return{
+        background-color: #c8d9e3;
+        text-decoration: none;
+        color: #021E30;
+        padding: 7px;
+            padding-left: 30px;
+            padding-right: 30px;
+            font-size: 15px;
+            border-radius: 5px;
+            margin-right: 1em;
+            margin-left: 1em;
+    }
+</style>
+
+<div class="create">
+<h1>Add details related to your world</h1>
+<p>Writing down these details before writing your story will allow for more sophistication later on!</p>
+<br>
+<form method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <br>
+    <a class="return"href="{% url 'details' %}">Back</a>
+    <input class="button" type="submit" value="Add Details"/>
+</form>
+</div>
+{% endblock content %}

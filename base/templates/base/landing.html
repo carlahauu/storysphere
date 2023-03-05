@@ -1,0 +1,35 @@
+{% extends "base/main.html" %}
+{% block content %}
+
+
+<body>
+<section class="hero">
+    <div class="container">
+        <div class="left-col">
+            <p class="subhead">CRAFT YOUR WORLD <br> WITH A TOOL THAT IS <br><span>OUT OF THIS WORLD</span></p>
+
+            <div class="hero-cta">
+                <a href="{% url 'characters' %}" class="primary-cta">
+                    START NOW
+                </a>
+                <a href="#" class="mission-cta">
+                    OUR MISSION
+                </a>
+            </div>
+        </div>
+    </div>
+    <img class="hero-img" src="https://media.discordapp.net/attachments/407710496670875661/1081689055344996503/story_sphere-2.png?width=529&height=529" class="hero-img">
+</section>
+
+<div class="testimonial">
+    <p>“This website helps me organize everything; from my characters to the entire world. It helps me keep my plot intact and my plot holes to a minimum. I’d recommend to any writer!” - User
+    </p>
+</div>
+
+<div class="why">
+    <h1 style="color:#FFE44C; font-size: 40px; font-weight: 300;">WHY YOU NEED STORYSPHERE:</h1>
+    <p style="color:white; font-size: 25px;">Having more organization helps your story have more structure and connections as you are writing it. As a result, the readers are less confused when reading your story.             
+    </p>
+</div>
+</body>
+{% endblock content %}

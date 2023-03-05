@@ -1,0 +1,72 @@
+{% extends "base/main.html" %}
+
+{% block title %}
+Login Here 
+{% endblock %}
+
+{% block content %}
+
+<style>
+    h1{
+        color:#FFE44C; 
+        font-size: 35px;
+        font-weight: 200;
+        margin-bottom: none;
+        padding-bottom: none;
+    }
+    .button{
+        color: #021E30; 
+        background-color: #61C2F9;
+        border-style: none;
+        padding: 5px;
+            padding-left: 50px;
+            padding-right: 50px;
+            font-size: 20px;
+            border-radius: 5px;
+            margin-right: 1em;
+    }
+    label{
+        color: #ffffff;
+        font-size: 30px;
+        margin-right: 1em;
+    }
+    p{
+        color:#FFE44C;
+    }
+    .login{
+        padding-top: 100px;
+        padding-bottom: 450px;
+        display: block;
+        margin: auto;
+        text-align: center;
+    }
+    .back, .register{
+        color:#61C2F9
+    }
+    .return{
+        background-color: #c8d9e3;
+        text-decoration: none;
+        color: #021E30;
+        padding: 7px;
+            padding-left: 30px;
+            padding-right: 30px;
+            font-size: 15px;
+            border-radius: 5px;
+            margin-right: 1em;
+            margin-left: 1em;
+    }
+</style>
+
+<div class="login">
+    <h1>LOGIN TO ACCOUNT</h1>
+<form method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <a class="return"href="{% url 'home' %}">Back to Home</a>
+    <input class="button"type="submit" value="Login"/>
+</form>
+<p style="color:white;">Don't have an account? 
+    <a class="register"href="{% url 'register' %}">Register</a></p>
+</div>
+
+{% endblock content %}
